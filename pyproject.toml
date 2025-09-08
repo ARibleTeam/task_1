@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "area-figures"
+version = "0.1.0"
+description = "Area calculations for basic figures"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.package-dir]
+"" = "scr"
+
+[tool.setuptools.packages.find]
+where = ["scr"]
+include = ["area_figures*"]
