@@ -92,24 +92,21 @@ class Triangle(Figure):
         self.a = a
         self.b = b
         self.c = c
-
+        self.is_rectangular = self.__is_rectangular()
+    
+    def __is_rectangular(self):
+        a2 = self.a**2
+        b2 = self.b**2
+        c2 = self.c**2
+        return (a2 + b2 == c2) or (a2 + c2 == b2) or (b2 + c2 == a2)
+        
     @property
     def area(self):
         """Площадь треугольника по формуле Герона.
 
-        Внутри проводится классификация по типу треугольника (остроугольный,
-        прямоугольный, тупоугольный), но это не влияет на возвращаемое значение.
-
         Returns:
             float: Площадь треугольника.
         """
-
-        if self.c**2 == (self.a**2 + self.b**2):
-            pass # прямоугольный
-        elif self.c**2 < self.a**2 + self.b**2:
-            pass # остроугольный
-        else:
-            pass # тупоугольный
 
         p = (self.a + self.b + self.c) / 2 # формула Герона с полупериметром
         return sqrt(p*(p-self.a)*(p-self.b)*(p-self.c))

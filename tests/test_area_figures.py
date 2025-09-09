@@ -15,5 +15,8 @@ class TestTriangle(unittest.TestCase):
     def test_area(self):
         self.assertEqual(self.triangle.area, 60.0)
 
+    def test_is_rectangular(self):
+        self.assertEqual(self.triangle.is_rectangular, True)
+
 if __name__ == "__main__":
     unittest.main()
